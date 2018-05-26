@@ -5,14 +5,14 @@ var guessesLeft = 10;
 var guessesSoFar = [];
 
 var words = [
-    "Important", 
-    "Macaroni", 
-    "Engineer", 
-    "Javascript", 
-    "Champion",
-    "Pastry",
-    "Arizona",
-    "England"
+    "important", 
+    "macaroni", 
+    "engineer", 
+    "javascript", 
+    "champion",
+    "pastry",
+    "arizona",
+    "england"
 ];
 
 var wordToGuess = words[Math.floor(Math.random() * words.length)]; { 
@@ -25,11 +25,17 @@ for (var i = 0; i < wordToGuess.length; i++) {
 answerSlot[i] = "_";
 console.log(answerSlot);
 }
-var wordShow = document.getElementById("word");
-wordShow.innerHTML = answerSlot.join(" ");
+document.querySelector('#word').innerHTML = "Guess the word  "  + answerSlot.join(" ");
 
 var remainingLetters = wordToGuess.length;
 
+var userGuess = [];
+for (var j = 0; j < wordToGuess.length; j++) {
+     if (word[j] === userGuess) {
+     answerArray[j] = userGuess;
+     remainingLetters--;
+     }
+    }
 
 
 
