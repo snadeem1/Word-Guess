@@ -15,9 +15,32 @@ var words = [
     "England"
 ];
 
-var wordToGuess = words.[Math.floor(Math.random()*words.length)];
+var wordToGuess = words[Math.floor(Math.random() * words.length)];
 
-var dashes = [];
+var answerSlot = [];
 for (var i = 0; i < wordToGuess; i++) {
-dashes[i] = "_";
+answerSlot[i] = "_";
+document.querySelector('#word').innerHTML = "Guess the word " + answerSlot;
+};
+
+var remainingletters = wordToGuess.length;
+
+var newGuessesSoFar = function() {
+    document.querySelector('#let').innerHTML = "Your Guesses so far: " + guessesSoFar.join(', ');
+        
+};
+
+document.onkeyup = function(event) {
+    var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+     guessesSoFar.push(userGuess);
+
+if (remainingletters == 0 && userGuess !== wordToGuess ){
+    losses++;
+    document.querySelector('#losses').innerHTML = "Losses: " + losses;
+        alert('Try again');
+}
+
+
+
+
 }
