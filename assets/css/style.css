@@ -1,11 +1,27 @@
 body{
-    background-image: url(https://cdn.pixabay.com/photo/2017/08/09/13/49/cartoon-2614617_960_720.jpg);
-   
-    
-    
+    background-image: url(https://on-ze.com/wordpress/wp-content/uploads/2018/01/bubbly.gif); 
+    background-size: 100% 100%;
 }
+
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: aliceblue;
+}
+
+h2{
+    color: antiquewhite;
+}
+
 p{
-    color: red;
+    color: whitesmoke;
     font-weight: bold;
     font-size: 25px;
+    
+}
+#box{
+    border-style: dashed;
+    border-width: 5px;
+    border-color: turquoise;
+    padding: 15px;
+    
 }
