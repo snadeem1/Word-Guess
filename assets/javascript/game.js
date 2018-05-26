@@ -54,6 +54,26 @@ document.querySelector('#word').innerHTML = "Guess the word " + answerSlot.join(
 remainingletters = wordToGuess.length;
 };
 
+var NewGame = function()
+{
+wins = 0;
+document.querySelector('#wins').innerHTML = "Wins: " + wins;
+losses = 0;
+document.querySelector('#losses').innerHTML = "Losses: " + losses;
+guessesLeft = 10;
+guessesSoFar = [];
+answerSlot = [];
+newGuessesSoFar();
+updateGuessesLeft();
+wordToGuess = words[Math.floor(Math.random() * words.length)];
+
+for (var i = 0; i < wordToGuess.length; i++) {
+answerSlot.push("_");
+document.querySelector('#word').innerHTML = "Guess the word " + answerSlot.join(" ");
+};
+
+remainingletters = wordToGuess.length;
+};
 
 
 ResetGame();
