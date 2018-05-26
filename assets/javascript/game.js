@@ -3,6 +3,9 @@ var losses = 0;
 var guesses = 10;
 var guessesLeft = 10;
 var guessesSoFar = [];
+var answerSlot = [];
+var wordToGuess = "";
+var remainingLetters = 0;
 
 var words = [
     "important", 
@@ -15,27 +18,90 @@ var words = [
     "england"
 ];
 
-var wordToGuess = words[Math.floor(Math.random() * words.length)]; { 
-    console.log(wordToGuess);
+
+function wordGuess(answerSlot)
+{
+
+document.querySelector('#word').innerHTML = "Guess the word " + answerSlot.join(" ");
+
+
+}
+
+var newGuessesSoFar = function() {
+   document.querySelector('#let').innerHTML = "Your Guesses so far: " + guessesSoFar.join(', ');
+       
 };
+
+var updateGuessesLeft = function() {
+    document.querySelector('#guessLeft').innerHTML = "Guesses left: " + guessesLeft;
+  };
+
+
+var ResetGame = function()
+{
+guessesLeft = 10;
+guessesSoFar = [];
+answerSlot = [];
+newGuessesSoFar();
+updateGuessesLeft();
+wordToGuess = words[Math.floor(Math.random() * words.length)];
+
+for (var i = 0; i < wordToGuess.length; i++) {
+answerSlot.push("_");
+document.querySelector('#word').innerHTML = "Guess the word " + answerSlot.join(" ");
+};
+
+remainingletters = wordToGuess.length;
+};
+
+
+
+ResetGame();
+
+
+updateGuessesLeft();
+document.onkeyup = function(event) {
+   var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+  
+    guessesSoFar.push(userGuess);
+    newGuessesSoFar();
+    guessesLeft--;
+    updateGuessesLeft();
+
     
 
-var answerSlot = [];
-for (var i = 0; i < wordToGuess.length; i++) {
-answerSlot[i] = "_";
-console.log(answerSlot);
+      for (var j = 0; j < wordToGuess.length; j++) {
+            if (wordToGuess[j] == userGuess) {
+            
+                 answerSlot[j] = userGuess;
+            
+
+                 wordGuess(answerSlot);
+
+            }
+        }
+
+if (userGuess == newGuessesSoFar){
+    alert('You already selected this letter');
 }
-document.querySelector('#word').innerHTML = "Guess the word  "  + answerSlot.join(" ");
 
-var remainingLetters = wordToGuess.length;
+if (remainingletters === 0){
+   wins++;
+   document.querySelector('#wins').innerHTML = "Wins: " + wins;
+      ResetGame();
+       alert('Wow you got it right!');
+}
+else if(guessesLeft === 0)
+{
+   losses++;
+   document.querySelector('#losses').innerHTML = "Losses: " + losses;
+      ResetGame();
+       alert('Sorry You lost! Your word was  ' + '"' + wordToGuess + '"');
+}
 
-var userGuess = [];
-for (var j = 0; j < wordToGuess.length; j++) {
-     if (word[j] === userGuess) {
-     answerArray[j] = userGuess;
-     remainingLetters--;
-     }
-    }
 
 
 
+}
+
+updateGuessesLeft();
