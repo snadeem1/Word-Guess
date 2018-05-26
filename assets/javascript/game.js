@@ -98,8 +98,8 @@ else if(guessesLeft === 0)
 {
    losses++;
    document.querySelector('#losses').innerHTML = "Losses: " + losses;
-      ResetGame();
-       alert('Sorry You lost! Your word was  ' + '"' + wordToGuess + '"');
+   alert('Sorry You lost! Your word was  ' + '"' + wordToGuess + '"');
+   ResetGame();
 }
 }
 
