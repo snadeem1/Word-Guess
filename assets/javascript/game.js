@@ -62,7 +62,13 @@ ResetGame();
 updateGuessesLeft();
 document.onkeyup = function(event) {
    var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-  
+   
+   for (var x = 0; x < guessesSoFar.length; x++){
+    if (userGuess == guessesSoFar[x]){
+        alert('You already selected this letter');
+        return;
+    }
+    }
     guessesSoFar.push(userGuess);
     newGuessesSoFar();
     guessesLeft--;
@@ -81,9 +87,6 @@ document.onkeyup = function(event) {
             }
         }
 
-if (userGuess == newGuessesSoFar){
-    alert('You already selected this letter');
-}
 
 if (remainingletters === 0){
    wins++;
@@ -98,10 +101,7 @@ else if(guessesLeft === 0)
       ResetGame();
        alert('Sorry You lost! Your word was  ' + '"' + wordToGuess + '"');
 }
-
-
-
-
 }
 
 updateGuessesLeft();
+
