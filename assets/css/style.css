@@ -1,3 +1,11 @@
+body{
+    background-image: url(https://cdn.pixabay.com/photo/2017/08/09/13/49/cartoon-2614617_960_720.jpg);
+   
+    
+    
+}
 p{
-    color: blue;
+    color: red;
+    font-weight: bold;
+    font-size: 25px;
 }
