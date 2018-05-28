@@ -38,7 +38,12 @@ var newGuessesSoFar = function() {
 var updateGuessesLeft = function() {
     document.querySelector('#guessLeft').innerHTML = "Guesses left : " + guessesLeft;
   };
-
+  var ReduceScore = function(letters)
+  {
+  
+    var iLetter = letters -1;
+    return iLetter;
+  }
 
 var ResetGame = function()
 {
@@ -84,6 +89,9 @@ remainingletters = wordToGuess.length;
 
 ResetGame();
 updateGuessesLeft();
+
+remainingLetters = wordToGuess.length;
+
 document.onkeyup = function(event) {
    var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
    
@@ -104,7 +112,7 @@ document.onkeyup = function(event) {
             if (wordToGuess[j] == userGuess) {
             
                  answerSlot[j] = userGuess;
-            
+                 remainingletters = ReduceScore(remainingletters);
 
                  wordGuess(answerSlot);
 
@@ -113,11 +121,13 @@ document.onkeyup = function(event) {
 
 
 if (remainingletters === 0){
-    wins++;
-    document.querySelector('#wins').innerHTML = "Wins: " + wins;
-         ResetGame();
-        alert('Wow you got it right!');
-}
+    debugger
+     wins++;
+     document.querySelector('#wins').innerHTML = "Wins: " + wins;
+     ResetGame();
+     alert('Wow you got it right!');
+         }
+
 else if(guessesLeft === 0)
 {
    losses++;
