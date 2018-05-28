@@ -57,6 +57,7 @@ document.querySelector('#word').innerHTML = "Guess the word : " + "  " + answerS
 remainingletters = wordToGuess.length;
 };
 
+
 var NewGame = function()
 {
 wins = 0;
@@ -79,9 +80,9 @@ remainingletters = wordToGuess.length;
 };
 
 
+
+
 ResetGame();
-
-
 updateGuessesLeft();
 document.onkeyup = function(event) {
    var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
@@ -112,10 +113,10 @@ document.onkeyup = function(event) {
 
 
 if (remainingletters === 0){
-   wins++;
-   document.querySelector('#wins').innerHTML = "Wins : " + wins;
-       alert('Wow you got it right!');
-       ResetGame();
+    wins++;
+    document.querySelector('#wins').innerHTML = "Wins: " + wins;
+         ResetGame();
+        alert('Wow you got it right!');
 }
 else if(guessesLeft === 0)
 {
