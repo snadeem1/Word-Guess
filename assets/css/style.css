@@ -51,16 +51,12 @@ p{
         max-height: 100%;
     }
     .container{
-        width: 90%;
+        width: 100%;
         max-width: 640px;
+        height: 100%;
     
       }
-    .col-md-12 {
-        width: 100%;
-    }
+  
 
-    .col-md-6 {
-        width: 100%;
 
-    }
 }
