@@ -28,12 +28,12 @@ document.querySelector('#word').innerHTML = "Guess the word " + answerSlot.join(
 }
 
 var newGuessesSoFar = function() {
-   document.querySelector('#let').innerHTML = "Your Guesses so far: " + guessesSoFar.join(', ');
+   document.querySelector('#let').innerHTML = "Your Guesses so far : " + guessesSoFar.join(', ');
        
 };
 
 var updateGuessesLeft = function() {
-    document.querySelector('#guessLeft').innerHTML = "Guesses left: " + guessesLeft;
+    document.querySelector('#guessLeft').innerHTML = "Guesses left : " + guessesLeft;
   };
 
 
@@ -57,9 +57,9 @@ remainingletters = wordToGuess.length;
 var NewGame = function()
 {
 wins = 0;
-document.querySelector('#wins').innerHTML = "Wins: " + wins;
+document.querySelector('#wins').innerHTML = "Wins : " + wins;
 losses = 0;
-document.querySelector('#losses').innerHTML = "Losses: " + losses;
+document.querySelector('#losses').innerHTML = "Losses : " + losses;
 guessesLeft = 10;
 guessesSoFar = [];
 answerSlot = [];
@@ -110,14 +110,14 @@ document.onkeyup = function(event) {
 
 if (remainingletters === 0){
    wins++;
-   document.querySelector('#wins').innerHTML = "Wins: " + wins;
+   document.querySelector('#wins').innerHTML = "Wins : " + wins;
       ResetGame();
        alert('Wow you got it right!');
 }
 else if(guessesLeft === 0)
 {
    losses++;
-   document.querySelector('#losses').innerHTML = "Losses: " + losses;
+   document.querySelector('#losses').innerHTML = "Losses : " + losses;
    alert('Sorry You lost! Your word was  ' + '"' + wordToGuess + '"');
    ResetGame();
 }

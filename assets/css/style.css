@@ -20,14 +20,19 @@ h2{
 }
 
 p{
-    color: whitesmoke;
+    color: #00e6e6;
     font-weight: bold;
     font-size: 25px;
     font-family: 'Abril Fatface', cursive;
     
 }
 #resetbtn{
-    background: #00cccc;
+    background: #ff9999;
+    border-color: #4d1933;
+    margin-left: 35%;
+    color: #800060;
+    font-family: 'Abril Fatface', cursive;
+    font-weight: bold;
 }
 
 #box{
