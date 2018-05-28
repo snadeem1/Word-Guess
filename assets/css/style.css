@@ -1,9 +1,7 @@
 body{
     background-image: url(http://i0.wp.com/coolwallpaper.website/wp-content/uploads/2017/10/gif-backgrounds-lovely-images-of-animated-stages-google-search-mood-of-gif-backgrounds.gif); 
     background-repeat: no-repeat;
-    height: 100%; 
-    background-position: center;
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 h1{
@@ -53,15 +51,15 @@ p{
         max-height: 100%;
     }
     .container{
-        width: auto;
+        width: 90%;
         max-width: 640px;
     
       }
-    .col-12 {
+    .col-md-12 {
         width: 100%;
     }
 
-    .col-6 {
+    .col-md-6 {
         width: 100%;
 
     }
