@@ -1,32 +1,39 @@
 body{
-    background-image: url(https://on-ze.com/wordpress/wp-content/uploads/2018/01/bubbly.gif); 
+    background-image: url(http://i0.wp.com/coolwallpaper.website/wp-content/uploads/2017/10/gif-backgrounds-lovely-images-of-animated-stages-google-search-mood-of-gif-backgrounds.gif); 
     background-size: 100% 100%;
 }
 
 h1{
     font-family: 'Shrikhand', cursive;
-    color: aliceblue;
-    text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+    color: #cc6699;
+    text-shadow: -1px 0 #4d1933, 0 4px #4d1933, 4px 0 #4d1933, 0 -1px #4d1933;
     font-size: 50px;
     margin-top: 10px;
 }
 
 h2{
     
-    font-size: 40px;
-    color: antiquewhite;
+    font-size: 45px;
+    color: #ffb366;
+    font-family: 'Lobster', cursive;
+    text-shadow: -1px 0 #4d1933, 0 4px #4d1933, 4px 0 #4d1933, 0 -1px #4d1933;
 }
 
 p{
     color: whitesmoke;
     font-weight: bold;
     font-size: 25px;
+    font-family: 'Abril Fatface', cursive;
     
 }
+#resetbtn{
+    background: #00cccc;
+}
+
 #box{
-    border-style: dashed;
-    border-width: 5px;
-    border-color: turquoise;
+    border-style: dotted;
+    border-width: 2px;
+    border-color: rgb(21, 110, 102);
     padding: 15px;
     
 }
