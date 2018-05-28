@@ -15,14 +15,17 @@ var words = [
     "champion",
     "pastry",
     "arizona",
-    "england"
+    "england",
+    "gazebo",
+    "oxygen",
+    "fishhook"
 ];
 
 
 function wordGuess(answerSlot)
 {
 
-document.querySelector('#word').innerHTML = "Guess the word " + answerSlot.join(" ");
+document.querySelector('#word').innerHTML = "Guess the word : " + "  " + answerSlot.join(" ");
 
 
 }
@@ -48,7 +51,7 @@ wordToGuess = words[Math.floor(Math.random() * words.length)];
 
 for (var i = 0; i < wordToGuess.length; i++) {
 answerSlot.push("_");
-document.querySelector('#word').innerHTML = "Guess the word " + answerSlot.join(" ");
+document.querySelector('#word').innerHTML = "Guess the word : " + "  " + answerSlot.join(" ");
 };
 
 remainingletters = wordToGuess.length;
@@ -69,7 +72,7 @@ wordToGuess = words[Math.floor(Math.random() * words.length)];
 
 for (var i = 0; i < wordToGuess.length; i++) {
 answerSlot.push("_");
-document.querySelector('#word').innerHTML = "Guess the word " + answerSlot.join(" ");
+document.querySelector('#word').innerHTML = "Guess the word : " + "  " + answerSlot.join(" ");
 };
 
 remainingletters = wordToGuess.length;
@@ -111,8 +114,8 @@ document.onkeyup = function(event) {
 if (remainingletters === 0){
    wins++;
    document.querySelector('#wins').innerHTML = "Wins : " + wins;
-      ResetGame();
        alert('Wow you got it right!');
+       ResetGame();
 }
 else if(guessesLeft === 0)
 {
