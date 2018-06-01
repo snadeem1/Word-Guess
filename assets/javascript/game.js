@@ -6,6 +6,14 @@ var guessesSoFar = [];
 var answerSlot = [];
 var wordToGuess = "";
 var remainingLetters = 0;
+var audioElement = document.createElement("audio");
+        audioElement.setAttribute("src", "assets/win.mp3");
+        
+
+        
+       
+          
+
 
 var words = [
     "important", 
@@ -38,12 +46,7 @@ var updateGuessesLeft = function() {
     document.querySelector('#guessLeft').innerHTML = "Guesses left : " + guessesLeft;
   };
 
-// function to reduce the remaining letters
-  var ReduceScore = function(letters)
-  {
-    var iLetter = letters -1;
-    return iLetter;
-  }
+
 
   // reset game after wins or losses
 var ResetGame = function()
@@ -66,6 +69,7 @@ remainingletters = wordToGuess.length;
 // reset the whole game by pressin the reset button
 var NewGame = function()
 {
+    
 wins = 0;
 document.querySelector('#wins').innerHTML = "Wins : " + wins;
 losses = 0;
@@ -120,7 +124,7 @@ document.onkeyup = function(event) {
                  answerSlot[j] = userGuess;
 
                  //reduce the remaining letters number
-                 remainingletters = ReduceScore(remainingletters);
+                 remainingletters--;
 
                  wordGuess(answerSlot);
 
@@ -132,9 +136,12 @@ if (remainingletters === 0){
     debugger
      wins++;
      document.querySelector('#wins').innerHTML = "Wins: " + wins;
-     ResetGame();
+     
+     audioElement.play();
      alert('Wow you got it right!');
-         }
+     ResetGame();
+     
+        }
 
 else if(guessesLeft === 0)
 {
